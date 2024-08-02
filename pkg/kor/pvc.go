@@ -82,7 +82,7 @@ func GetUnusedPvcs(filterOpts *filters.Options, clientset kubernetes.Interface, 
 			continue
 		}
 		if opts.DeleteFlag {
-			if diff, err = DeleteResource(diff, clientset, namespace, "PVC", opts.NoInteractive); err != nil {
+			if diff, err = DeleteResource(diff, clientset, namespace, "PVC", opts.NonInteractive); err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to delete PVC %s in namespace %s: %v\n", diff, namespace, err)
 			}
 		}

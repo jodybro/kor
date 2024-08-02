@@ -172,7 +172,7 @@ func GetUnusedNetworkPolicies(filterOpts *filters.Options, clientset kubernetes.
 			continue
 		}
 		if opts.DeleteFlag {
-			if diff, err := DeleteResource(diff, clientset, namespace, "NetworkPolicy", opts.NoInteractive); err != nil {
+			if diff, err := DeleteResource(diff, clientset, namespace, "NetworkPolicy", opts.NonInteractive); err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to delete NetworkPolicy %s in namespace %s: %v\n", diff, namespace, err)
 			}
 		}

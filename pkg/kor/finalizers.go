@@ -95,7 +95,7 @@ func GetUnusedfinalizers(filterOpts *filters.Options, clientset kubernetes.Inter
 		if slices.Contains(namespaces, namespace) {
 			for gvr, resourceDiff := range resourceType {
 				if opts.DeleteFlag {
-					if resourceDiff, err = DeleteResourceWithFinalizer(resourceDiff, dynamicClient, namespace, gvr, opts.NoInteractive); err != nil {
+					if resourceDiff, err = DeleteResourceWithFinalizer(resourceDiff, dynamicClient, namespace, gvr, opts.NonInteractive); err != nil {
 						fmt.Fprintf(os.Stderr, "Failed to delete objects waiting for Finalizers %s in namespace %s: %v\n", resourceDiff, namespace, err)
 					}
 				}

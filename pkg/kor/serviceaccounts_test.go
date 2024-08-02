@@ -186,12 +186,12 @@ func TestGetUnusedServiceAccountsStructured(t *testing.T) {
 	}
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedServiceAccounts(&filters.Options{}, clientset, "json", opts)

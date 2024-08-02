@@ -108,7 +108,7 @@ func GetUnusedMulti(resourceNames string, filterOpts *filters.Options, clientset
 		for _, diff := range noNamespaceDiff {
 			if len(diff.diff) != 0 {
 				if opts.DeleteFlag {
-					if diff.diff, err = DeleteResource(diff.diff, clientset, "", diff.resourceType, opts.NoInteractive); err != nil {
+					if diff.diff, err = DeleteResource(diff.diff, clientset, "", diff.resourceType, opts.NonInteractive); err != nil {
 						fmt.Fprintf(os.Stderr, "Failed to delete %s %s: %v\n", diff.resourceType, diff.diff, err)
 					}
 				}
@@ -127,7 +127,7 @@ func GetUnusedMulti(resourceNames string, filterOpts *filters.Options, clientset
 		allDiffs := retrieveNamespaceDiffs(clientset, namespace, resourceList, filterOpts)
 		for _, diff := range allDiffs {
 			if opts.DeleteFlag {
-				if diff.diff, err = DeleteResource(diff.diff, clientset, namespace, diff.resourceType, opts.NoInteractive); err != nil {
+				if diff.diff, err = DeleteResource(diff.diff, clientset, namespace, diff.resourceType, opts.NonInteractive); err != nil {
 					fmt.Fprintf(os.Stderr, "Failed to delete %s %s in namespace %s: %v\n", diff.resourceType, diff.diff, namespace, err)
 				}
 			}

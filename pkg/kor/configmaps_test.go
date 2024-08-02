@@ -199,12 +199,12 @@ func TestGetUnusedConfigmapsStructured(t *testing.T) {
 	clientset := createTestConfigmaps(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedConfigmaps(&filters.Options{}, clientset, "json", opts)

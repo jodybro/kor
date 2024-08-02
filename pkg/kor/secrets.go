@@ -205,7 +205,7 @@ func GetUnusedSecrets(filterOpts *filters.Options, clientset kubernetes.Interfac
 			continue
 		}
 		if opts.DeleteFlag {
-			if diff, err = DeleteResource(diff, clientset, namespace, "Secret", opts.NoInteractive); err != nil {
+			if diff, err = DeleteResource(diff, clientset, namespace, "Secret", opts.NonInteractive); err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to delete Secret %s in namespace %s: %v\n", diff, namespace, err)
 			}
 		}

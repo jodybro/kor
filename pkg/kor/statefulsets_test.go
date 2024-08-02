@@ -76,12 +76,12 @@ func TestGetUnusedStatefulSetsStructured(t *testing.T) {
 	clientset := createTestStatefulSets(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedStatefulSets(&filters.Options{}, clientset, "json", opts)

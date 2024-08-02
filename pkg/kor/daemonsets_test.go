@@ -84,12 +84,12 @@ func TestGetUnusedDaemonSetsStructured(t *testing.T) {
 	clientset := createTestDaemonSets(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedDaemonSets(&filters.Options{}, clientset, "json", opts)

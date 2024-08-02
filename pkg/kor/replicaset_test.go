@@ -59,12 +59,12 @@ func TestProcessNamespaceReplicaSets(t *testing.T) {
 	clientset := createTestReplicaSets(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedReplicaSets(&filters.Options{}, clientset, "json", opts)

@@ -126,7 +126,7 @@ func GetUnusedIngresses(filterOpts *filters.Options, clientset kubernetes.Interf
 			continue
 		}
 		if opts.DeleteFlag {
-			if diff, err = DeleteResource(diff, clientset, namespace, "Ingress", opts.NoInteractive); err != nil {
+			if diff, err = DeleteResource(diff, clientset, namespace, "Ingress", opts.NonInteractive); err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to delete Ingress %s in namespace %s: %v\n", diff, namespace, err)
 			}
 		}

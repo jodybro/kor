@@ -76,12 +76,12 @@ func TestGetUnusedDeploymentsStructured(t *testing.T) {
 	clientset := createTestDeployments(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedDeployments(&filters.Options{}, clientset, "json", opts)

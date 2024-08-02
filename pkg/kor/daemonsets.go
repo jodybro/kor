@@ -69,7 +69,7 @@ func GetUnusedDaemonSets(filterOpts *filters.Options, clientset kubernetes.Inter
 			continue
 		}
 		if opts.DeleteFlag {
-			if diff, err = DeleteResource(diff, clientset, namespace, "DaemonSet", opts.NoInteractive); err != nil {
+			if diff, err = DeleteResource(diff, clientset, namespace, "DaemonSet", opts.NonInteractive); err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to delete DaemonSet %s in namespace %s: %v\n", diff, namespace, err)
 			}
 		}

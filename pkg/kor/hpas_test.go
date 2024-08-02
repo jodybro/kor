@@ -85,12 +85,12 @@ func TestGetUnusedHpasStructured(t *testing.T) {
 	clientset := createTestHpas(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedHpas(&filters.Options{}, clientset, "json", opts)

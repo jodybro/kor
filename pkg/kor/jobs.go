@@ -75,7 +75,7 @@ func GetUnusedJobs(filterOpts *filters.Options, clientset kubernetes.Interface, 
 			continue
 		}
 		if opts.DeleteFlag {
-			if diff, err = DeleteResource(diff, clientset, namespace, "Job", opts.NoInteractive); err != nil {
+			if diff, err = DeleteResource(diff, clientset, namespace, "Job", opts.NonInteractive); err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to delete Job %s in namespace %s: %v\n", diff, namespace, err)
 			}
 		}

@@ -71,12 +71,12 @@ func TestGetUnusedStorageClassesStructured(t *testing.T) {
 	clientset := createTestStorageClass(t)
 
 	opts := common.Opts{
-		WebhookURL:    "",
-		Channel:       "",
-		Token:         "",
-		DeleteFlag:    false,
-		NoInteractive: true,
-		GroupBy:       "namespace",
+		WebhookURL:     "",
+		Channel:        "",
+		Token:          "",
+		DeleteFlag:     false,
+		NonInteractive: true,
+		GroupBy:        "namespace",
 	}
 
 	output, err := GetUnusedStorageClasses(&filters.Options{}, clientset, "json", opts)
