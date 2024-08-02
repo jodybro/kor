@@ -4,13 +4,12 @@ EXCEPTIONS_FILE_PATTERN := *.json
 .PHONY: *
 
 build:
-	go build -o build/kor main.go
+	cd build && \
 	CGO_ENABLED=0 \
 		go build \
 			-a \
 			-trimpath \
-			-o build/kor \
-			-ldflags "-s -w"
+			-ldflags "-s -w" \
 	main.go
 
 lint:
