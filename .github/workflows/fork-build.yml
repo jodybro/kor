@@ -1,9 +1,9 @@
 name: build-lint-test
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - "fork-*"
-
+    branches-ignore:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
