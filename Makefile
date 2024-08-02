@@ -5,6 +5,13 @@ EXCEPTIONS_FILE_PATTERN := *.json
 
 build:
 	go build -o build/kor main.go
+	CGO_ENABLED=0 \
+		go build \
+			-a \
+			-trimpath \
+			-o build/kor \
+			-ldflags "-s -w"
+	main.go
 
 lint:
 	golangci-lint run
